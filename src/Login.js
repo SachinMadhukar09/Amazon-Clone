@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link , useHistory} from "react-router-dom";
-import { auth } from "./firebase";
+import { auth } from "./Firebase";
 
 function Login() {
   const history = useHistory();
@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     //Firebase Stuff
     auth
-      .signInWithEmailandPassword(email,password)
+      .signInWithEmailAndPassword(email,password)
       .then((auth) => {
         history.push('/')
       })
@@ -26,7 +26,7 @@ function Login() {
         .createUserWithEmailAndPassword(email, password)
         .then((auth)=>{
             // it means sucessfuly created a new user with email and password
-          // console.log(auth)
+          console.log(auth)
           if(auth){
             history.push('/')
           }
