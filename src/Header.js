@@ -28,7 +28,7 @@ function Header() {
         />
       </Link>
       <Menu>
-      <div className="header_search">
+        <div className="header_search">
           <input className="header__searchInput" type="text" />
           <SearchIcon className="header__searchIcon" />
         </div>
@@ -36,7 +36,7 @@ function Header() {
           <Link to={!user && "/login"}>
             <div onClick={handleAuthentication} className="header__option">
               <span className="header__optionLineOne">
-                Hello {user ? user.email : "User"}
+                Hello {user ? user.email : "Guest"}
               </span>
               <span className="header__optionLineTwo">
                 {user ? "Sign Out" : "Sign In"}
@@ -62,7 +62,6 @@ function Header() {
         </div>
       </Menu>
 
-
       <RightMenu>
         <CustomMenu onClick={() => setBurgerStatus(true)} />
       </RightMenu>
@@ -78,7 +77,7 @@ function Header() {
           <Link to={!user && "/login"}>
             <div onClick={handleAuthentication} className="header__option1">
               <span className="header__optionLineOne1">
-                Hello {user ? user.email : "User"}
+                Hello {user ? user.email : "Guest"}
               </span>
               <span className="header__optionLineTwo1">
                 {user ? "Sign Out" : "Sign In"}
@@ -111,7 +110,7 @@ export default Header;
 const RightMenu = styled.div`
   display: flex;
   // padding-left: 60%;
-  color:white;
+  color: white;
   a {
     font-weight: 600;
     text-decoration: uppercase;
@@ -122,8 +121,6 @@ const RightMenu = styled.div`
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
   // background-color:white;
-
-
 `;
 
 const BugerNav = styled.div`
@@ -153,7 +150,6 @@ const BugerNav = styled.div`
   }
 `;
 
-
 const Menu = styled.div`
   display: flex;
   align-items: center;
@@ -174,13 +170,11 @@ const Menu = styled.div`
 
 const CustomClose = styled(CloseIcon)`
   cursor: pointer;
-  color:white;
-
+  color: white;
 `;
 
 const CloseWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   // background-color:white;
-
 `;
